@@ -10,6 +10,7 @@ function helpofai_scripts() {
     wp_enqueue_style( 'helpofai-header-css', get_template_directory_uri() . '/assets/css/header.css', array(), '1.0.0' );
     wp_enqueue_style( 'helpofai-sidebar-css', get_template_directory_uri() . '/assets/css/sidebar.css', array(), '1.0.0' );
     wp_enqueue_style( 'helpofai-search-css', get_template_directory_uri() . '/assets/css/components/search.css', array(), '1.0.0' );
+    wp_enqueue_style( 'helpofai-footer-css', get_template_directory_uri() . '/assets/css/components/footer.css', array(), '1.0.0' );
 	wp_enqueue_style( 'helpofai-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap', array(), null );
     
     // Home Page CSS

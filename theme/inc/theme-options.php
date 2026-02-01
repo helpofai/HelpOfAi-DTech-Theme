@@ -64,6 +64,14 @@ function helpofai_settings_init() {
     // Single Page Settings
     register_setting( 'helpofai_options_group', 'helpofai_show_related_posts' );
     register_setting( 'helpofai_options_group', 'helpofai_show_post_nav' );
+    
+    // Footer Settings
+    register_setting( 'helpofai_options_group', 'helpofai_footer_about' );
+    register_setting( 'helpofai_options_group', 'helpofai_social_fb' );
+    register_setting( 'helpofai_options_group', 'helpofai_social_tw' );
+    register_setting( 'helpofai_options_group', 'helpofai_social_li' );
+    register_setting( 'helpofai_options_group', 'helpofai_social_ig' );
+    register_setting( 'helpofai_options_group', 'helpofai_footer_text' );
 }
 add_action( 'admin_init', 'helpofai_settings_init' );
 
@@ -95,6 +103,12 @@ function helpofai_options_page_html() {
     $show_related = get_option('helpofai_show_related_posts', 1);
     $show_nav = get_option('helpofai_show_post_nav', 1);
     
+    // Footer Settings
+    $footer_about = get_option('helpofai_footer_about', 'HelpOfAi is your premier source for high-tech news and AI-driven insights.');
+    $social_fb = get_option('helpofai_social_fb', '');
+    $social_tw = get_option('helpofai_social_tw', '');
+    $social_li = get_option('helpofai_social_li', '');
+    $social_ig = get_option('helpofai_social_ig', '');
     $footer_text = get_option('helpofai_footer_text', '');
     
     // Hero Defaults
@@ -503,14 +517,41 @@ function helpofai_options_page_html() {
                     
                     <!-- Tab: Footer -->
                     <div id="tab-footer" class="tab-pane">
-                        <h2>Footer Options</h2>
-                        <hr>
-                        <table class="form-table">
-                            <tr>
-                                <th scope="row">Custom Copyright Text</th>
-                                <td><input type="text" name="helpofai_footer_text" value="<?php echo esc_attr($footer_text); ?>" class="regular-text"></td>
-                            </tr>
-                        </table>
+                        <div class="settings-group">
+                            <h3 class="group-title"><span class="dashicons dashicons-editor-insertmore"></span> Footer Content</h3>
+                            <table class="form-table">
+                                <tr>
+                                    <th scope="row">About Us Text</th>
+                                    <td><textarea name="helpofai_footer_about" class="large-text" rows="3"><?php echo esc_textarea($footer_about); ?></textarea></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Custom Copyright Text</th>
+                                    <td><input type="text" name="helpofai_footer_text" value="<?php echo esc_attr($footer_text); ?>" class="regular-text" placeholder="e.g. Built with AI by Rajib Adhikary"></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="settings-group" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+                            <h3 class="group-title"><span class="dashicons dashicons-share"></span> Social Media Links</h3>
+                            <table class="form-table">
+                                <tr>
+                                    <th scope="row">Facebook URL</th>
+                                    <td><input type="url" name="helpofai_social_fb" value="<?php echo esc_url($social_fb); ?>" class="regular-text"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Twitter/X URL</th>
+                                    <td><input type="url" name="helpofai_social_tw" value="<?php echo esc_url($social_tw); ?>" class="regular-text"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">LinkedIn URL</th>
+                                    <td><input type="url" name="helpofai_social_li" value="<?php echo esc_url($social_li); ?>" class="regular-text"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Instagram URL</th>
+                                    <td><input type="url" name="helpofai_social_ig" value="<?php echo esc_url($social_ig); ?>" class="regular-text"></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
 
                     <div class="helpofai-actions">
