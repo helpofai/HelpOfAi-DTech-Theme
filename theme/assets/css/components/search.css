@@ -1,0 +1,80 @@
+/*
+* Search Component Styles
+*/
+
+.search-form {
+    display: flex;
+    position: relative;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.search-form label {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.search-field {
+    width: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    color: var(--text-main);
+    font-family: inherit;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.search-field:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #6366f1;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+}
+
+body.dark-mode .search-field:focus {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.search-submit {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    flex-shrink: 0;
+}
+
+.search-submit:hover {
+    transform: translateY(-2px) rotate(10deg);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.5);
+}
+
+.search-submit .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Screen reader text accessibility */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}

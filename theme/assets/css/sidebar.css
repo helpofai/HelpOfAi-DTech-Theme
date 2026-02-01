@@ -1,0 +1,234 @@
+/*
+* Sidebar & Widget Styles
+*/
+
+.widget {
+    margin-bottom: 2.5rem;
+}
+
+.widget-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: var(--text-heading);
+}
+
+.widget-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--primary-gradient);
+    border-radius: 3px;
+}
+
+/* --- Recent Posts Widget --- */
+.widget_recent_entries ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget_recent_entries ul li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.widget_recent_entries ul li:last-child {
+    border-bottom: none;
+}
+
+.widget_recent_entries ul li a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1.4;
+    display: block;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.widget_recent_entries ul li a:hover {
+    color: #6366f1;
+}
+
+.post-date {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Hover Effect for the entire list item */
+.widget_recent_entries ul li:hover {
+    padding-left: 5px;
+}
+
+/* --- Recent Posts with Thumbnails --- */
+.helpofai-recent-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.recent-post-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.recent-post-thumb {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+}
+
+.recent-post-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.recent-post-item:hover .recent-post-thumb img {
+    transform: scale(1.1);
+}
+
+.recent-post-info {
+    flex-grow: 1;
+}
+
+.recent-post-title {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1.3;
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    transition: color 0.2s;
+}
+
+.recent-post-title:hover {
+    color: #6366f1;
+}
+
+.recent-post-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--primary-gradient);
+    opacity: 0.1;
+}
+
+/* --- Categories with Icons --- */
+.helpofai-category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.helpofai-category-list li {
+    margin-bottom: 0.75rem;
+}
+
+.helpofai-category-list li:last-child {
+    margin-bottom: 0;
+}
+
+.helpofai-category-list a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.helpofai-category-list a:hover {
+    background: var(--glass-bg);
+    border-color: #6366f1;
+    transform: translateX(5px);
+    box-shadow: var(--shadow-sm);
+}
+
+.cat-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-gradient);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+}
+
+.cat-name {
+    flex-grow: 1;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.cat-count {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+body.dark-mode .cat-count {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* --- Categories & Other Lists --- */
+.widget ul li {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.widget_categories ul li,
+.widget_archive ul li,
+.widget_nav_menu ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.widget_categories ul li a,
+.widget_archive ul li a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: color 0.2s;
+}
+
+.widget_categories ul li a:hover {
+    color: #6366f1;
+}

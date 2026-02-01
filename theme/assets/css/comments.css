@@ -1,0 +1,150 @@
+/*
+* Comment Section & Form Styles
+*/
+
+#comments {
+    margin-top: 4rem;
+}
+
+.comments-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-body {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    border-radius: var(--radius-main);
+    margin-bottom: 2rem;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.comment-body:hover {
+    transform: translateY(-5px);
+}
+
+.comment-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.comment-author .avatar {
+    border-radius: 50%;
+    border: 2px solid #6366f1;
+    padding: 2px;
+}
+
+.comment-author b {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-heading);
+}
+
+.comment-metadata a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.comment-content {
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+.reply {
+    margin-top: 1rem;
+}
+
+.comment-reply-link {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #6366f1;
+    text-decoration: none;
+}
+
+/* --- Comment Form --- */
+.comment-respond {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    padding: 3rem;
+    border-radius: var(--radius-main);
+    margin-top: 4rem;
+}
+
+.comment-reply-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.comment-form p {
+    margin-bottom: 1.5rem;
+}
+
+.comment-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-heading);
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 1rem;
+    border-radius: 12px;
+    color: var(--text-main);
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Dynamic Gradient Button --- */
+.submit, #wp-submit, .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit:hover, #wp-submit:hover, .btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.6);
+    color: white;
+}
+
+.submit:active {
+    transform: scale(0.98);
+}
